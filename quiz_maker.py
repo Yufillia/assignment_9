@@ -45,3 +45,32 @@ def save_to_file_and_exit():
             f.write(f"Answer: {q['answer']}\n")
             f.write("---\n")
     root.destroy()
+
+# GUI Setup
+root = tk.Tk()
+root.title("Quiz Creator GUI")
+
+tk.Label(root, text="Question:").grid(row=0, column=0, sticky="w")
+entry_question = tk.Entry(root, width=50)
+entry_question.grid(row=0, column=1)
+
+tk.Label(root, text="Choice a:").grid(row=1, column=0, sticky="w")
+entry_a = tk.Entry(root)
+entry_a.grid(row=1, column=1)
+
+tk.Label(root, text="Choice b:").grid(row=2, column=0, sticky="w")
+entry_b = tk.Entry(root)
+entry_b.grid(row=2, column=1)
+
+tk.Label(root, text="Choice c:").grid(row=3, column=0, sticky="w")
+entry_c = tk.Entry(root)
+entry_c.grid(row=3, column=1)
+
+tk.Label(root, text="Choice d:").grid(row=4, column=0, sticky="w")
+entry_d = tk.Entry(root)
+entry_d.grid(row=4, column=1)
+
+tk.Label(root, text="Correct Answer (a/b/c/d):").grid(row=5, column=0, sticky="w")
+answer_var = tk.StringVar()
+entry_answer = tk.Entry(root, textvariable=answer_var)
+entry_answer.grid(row=5, column=1)
