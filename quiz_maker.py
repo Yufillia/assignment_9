@@ -33,3 +33,15 @@ def save_question():
     answer_var.set("")
 
     messagebox.showinfo("Saved", "Question saved!")
+
+def save_to_file_and_exit():
+    with open("quiz_data.txt", "w", encoding="utf-8") as f:
+        for q in questions:
+            f.write(f"Question: {q['question']}\n")
+            f.write(f"a) {q['a']}\n")
+            f.write(f"b) {q['b']}\n")
+            f.write(f"c) {q['c']}\n")
+            f.write(f"d) {q['d']}\n")
+            f.write(f"Answer: {q['answer']}\n")
+            f.write("---\n")
+    root.destroy()
