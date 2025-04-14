@@ -76,3 +76,4 @@ entry_answer = tk.Entry(root, textvariable=answer_var)
 entry_answer.grid(row=5, column=1)
 
 tk.Button(root, text="Save Question", command=save_question).grid(row=6, column=0, pady=10)
+tk.Button(root, text="❌ Exit & Save to File", command=save_to_file_and_exit).grid(row=6, column=1)
