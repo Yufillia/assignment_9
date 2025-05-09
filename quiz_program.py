@@ -23,3 +23,13 @@ def loaded_questions(filename):
         }
         questions.append(q)
     return questions
+
+def load_new_question():
+    global current_question
+    current_question = random.choice(questions)
+    questions_label.config(text=current_question["question"])
+    var.set(None)
+    rb_a.config(text="a) " + current_question["a"])
+    rb_b.config(text="b) " + current_question["b"])
+    rb_c.config(text="c) " + current_question["c"])
+    rb_d.config(text="d) " + current_question["d"])
