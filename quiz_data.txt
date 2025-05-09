@@ -1,7 +1,14 @@
-Question: best flavor of ice cream?
-a) vanilla
-b) chocolate
+Question: best flavor of icecream?
+a) cookies and cream
+b) vanilla
 c) strawberry
-d) cookies and cream
-Answer: d
+d) chocolate
+Answer: a
+---
+Question: national fruit of the philippines?
+a) durian
+b) mango
+c) strawberry
+d) banana
+Answer: b
 ---

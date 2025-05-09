@@ -24,11 +24,20 @@ def loaded_questions(filename):
         questions.append(q)
     return questions
 
-def load_new_questions():
-    global current_question
-    current_question = random.choice(questions)
-    questions_label.config(text=current_question["question"])
-    var.set(None)
+def load_new_question():
+    global current_question, remaining_questions
+
+    if not remaining_questions:
+        messagebox.showinfo("Quiz Finished", "You've answered all questions!")
+        root.destroy()
+        return
+
+    current_question = random.choice(remaining_questions)
+    remaining_questions.remove(current_question)
+
+    question_label.config(text=current_question["question"])
+    var.set("")  # reset selected answer
+
     rb_a.config(text="a) " + current_question["a"])
     rb_b.config(text="b) " + current_question["b"])
     rb_c.config(text="c) " + current_question["c"])
@@ -37,7 +46,7 @@ def load_new_questions():
 def check_answer():
     selected = var.get()
     if selected == "":
-        messagebox.showwarning("No Answer", "Please selec an answer.")
+        messagebox.showwarning("No Answer", "Please select an answer.")
         return
     
     if selected == current_question["answer"]:
@@ -65,21 +74,21 @@ question_label.pack(pady=20)
 
 var = tk.StringVar(value="")
 
-rb_a = tk.Radiobutton(root, text="", variable=var,value="a" font=("Arial", 12))
+rb_a = tk.Radiobutton(root, text="", variable=var,value="a", font=("Arial", 12))
 rb_a.pack(anchor="w", padx=20)
 
-rb_b = tk.Radiobutton(root, text="", variable=var,value="b" font=("Arial", 12))
+rb_b = tk.Radiobutton(root, text="", variable=var,value="b", font=("Arial", 12))
 rb_b.pack(anchor="w", padx=20)
 
-rb_c = tk.Radiobutton(root, text="", variable=var,value="c" font=("Arial", 12))
+rb_c = tk.Radiobutton(root, text="", variable=var,value="c", font=("Arial", 12))
 rb_c.pack(anchor="w", padx=20)
 
-rb_d = tk.Radiobutton(root, text="", variable=var,value="d" font=("Arial", 12))
+rb_d = tk.Radiobutton(root, text="", variable=var,value="d", font=("Arial", 12))
 rb_d.pack(anchor="w", padx=20)
 
 tk.Button(root, text="Submit Answer", command=check_answer).pack(pady=10)
 tk.Button(root, text="Next Question", command=next_question).pack(pady=5)
 tk.Button(root, text="Exit", command=root.destroy).pack(pady=5)
 
-load_new_questions()
+load_new_question()
 root.mainloop()
