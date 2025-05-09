@@ -81,3 +81,5 @@ tk.Button(root, text="Submit Answer", command=check_answer).pack(pady=10)
 tk.Button(root, text="Next Question", command=next_question).pack(pady=5)
 tk.Button(root, text="Exit", command=root.destroy).pack(pady=5)
 
+load_new_questions()
+root.mainloop()
