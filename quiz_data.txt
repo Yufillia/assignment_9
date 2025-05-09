@@ -1,0 +1,7 @@
+Question: best flavor of ice cream?
+a) vanilla
+b) chocolate
+c) strawberry
+d) cookies and cream
+Answer: d
+---
