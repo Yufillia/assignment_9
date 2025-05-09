@@ -77,3 +77,7 @@ rb_c.pack(anchor="w", padx=20)
 rb_d = tk.Radiobutton(root, text="", variable=var,value="d" font=("Arial", 12))
 rb_d.pack(anchor="w", padx=20)
 
+tk.Button(root, text="Submit Answer", command=check_answer).pack(pady=10)
+tk.Button(root, text="Next Question", command=next_question).pack(pady=5)
+tk.Button(root, text="Exit", command=root.destroy).pack(pady=5)
+
