@@ -48,3 +48,9 @@ def check_answer():
 
 def next_question():
     load_new_question()
+
+questions = load_questions("quiz_data.txt")
+
+if not questions:
+    print("No questions loaded.")
+    exit()
