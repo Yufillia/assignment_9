@@ -60,6 +60,8 @@ def next_question():
 
 questions = loaded_questions("quiz_data.txt")
 
+remaining_questions = questions.copy()
+
 if not questions:
     print("No questions loaded.")
     exit()
