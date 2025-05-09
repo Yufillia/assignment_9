@@ -24,7 +24,7 @@ def loaded_questions(filename):
         questions.append(q)
     return questions
 
-def load_new_question():
+def load_new_questions():
     global current_question
     current_question = random.choice(questions)
     questions_label.config(text=current_question["question"])
@@ -49,8 +49,16 @@ def check_answer():
 def next_question():
     load_new_question()
 
-questions = load_questions("quiz_data.txt")
+questions = loaded_questions("quiz_data.txt")
 
 if not questions:
     print("No questions loaded.")
     exit()
+
+current_question = None
+
+root = tk.Tk()
+root.title("Quiz Program")
+
+question_label = tk.Label(root, text="", wraplength=400, font=("Arial", 14), justify="left")
+question_label.pack(pady=20)
