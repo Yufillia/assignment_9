@@ -45,3 +45,6 @@ def check_answer():
     else:
         correct = current_question["answer"]
         messagebox.showinfo("Result", f"Wrong! Correct answer is: {correct}.")
+
+def next_question():
+    load_new_question()
