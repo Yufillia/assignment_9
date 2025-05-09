@@ -33,3 +33,15 @@ def load_new_question():
     rb_b.config(text="b) " + current_question["b"])
     rb_c.config(text="c) " + current_question["c"])
     rb_d.config(text="d) " + current_question["d"])
+
+def check_answer():
+    selected = var.get()
+    if selected == "":
+        messagebox.showwarning("No Answer", "Please selec an answer.")
+        return
+    
+    if selected == current_question["answer"]:
+        messagebox.showinfo("Result", "Correct!")
+    else:
+        correct = current_question["answer"]
+        messagebox.showinfo("Result", f"Wrong! Correct answer is: {correct}.")
