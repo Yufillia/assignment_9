@@ -62,3 +62,18 @@ root.title("Quiz Program")
 
 question_label = tk.Label(root, text="", wraplength=400, font=("Arial", 14), justify="left")
 question_label.pack(pady=20)
+
+var = tk.StringVar(value="")
+
+rb_a = tk.Radiobutton(root, text="", variable=var,value="a" font=("Arial", 12))
+rb_a.pack(anchor="w", padx=20)
+
+rb_b = tk.Radiobutton(root, text="", variable=var,value="b" font=("Arial", 12))
+rb_b.pack(anchor="w", padx=20)
+
+rb_c = tk.Radiobutton(root, text="", variable=var,value="c" font=("Arial", 12))
+rb_c.pack(anchor="w", padx=20)
+
+rb_d = tk.Radiobutton(root, text="", variable=var,value="d" font=("Arial", 12))
+rb_d.pack(anchor="w", padx=20)
+
